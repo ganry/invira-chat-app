@@ -17,7 +17,7 @@ angular.module('inviraChatApp').
 
         channelsCtrl.createChannel = function() {
             channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(ref) {
-                $state.transitionTo('channels.messages', {channelId: ref.key()});
+                $state.go('channels.messages', {channelId: ref.key()});
             });
         };
 
@@ -25,7 +25,7 @@ angular.module('inviraChatApp').
             channelsCtrl.profile.online = null;
             channelsCtrl.profile.$save().then(function() {
                 Auth.$unauth();
-                $state.transitionTo('home');
+                $state.go('home');
             });
         };
     });

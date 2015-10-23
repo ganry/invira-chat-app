@@ -22,7 +22,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.transitionTo('channels');
+                            $state.go('channels');
                         }, function(error) {
                             return;
                         });
@@ -36,7 +36,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.transitionTo('home');
+                            $state.go('home');
                         }, function(error) {
                             return;
                         });
@@ -50,7 +50,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.transitionTo('home');
+                            $state.go('home');
                         }, function(error) {
                             return;
                         });
@@ -64,7 +64,7 @@ angular
                 resolve: {
                     auth: function($state, Users, Auth) {
                         return Auth.$requireAuth().catch(function() {
-                            $state.transitionTo('home');
+                            $state.go('home');
                         });
                     },
                     profile: function(Users, Auth) {
@@ -88,11 +88,11 @@ angular
                                 if (profile.displayName) {
                                     return profile;
                                 } else {
-                                    $state.transitionTo('profile');
+                                    $state.go('profile');
                                 }
                             });
                         }, function(error) {
-                            $state.transitionTo('home');
+                            $state.go('home');
                         });
                     }
                 }
