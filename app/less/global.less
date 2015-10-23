@@ -107,6 +107,11 @@ body {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
+.fixed-header h2 {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
 .float-right {
     float: right;
 }
@@ -147,8 +152,6 @@ div.create-channel {
 }
 
 
-
-
 .bubble.left {
     margin-left: 50px;
     background: @bubble-color;
@@ -161,4 +164,94 @@ div.create-channel {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+
+
+
+
+
+/************************************************
+Loader
+*************************************************/
+.loader_overlay {
+    background: #de3030;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.centering {
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(120px);
+        -moz-transform: translateX(120px);
+        -ms-transform: translateX(120px);
+        -o-transform: translateX(120px);
+        transform: translateX(120px);
+    }
+}
+@keyframes loader {
+    0% {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    50% {
+        -webkit-transform: translateX(120px);
+        -moz-transform: translateX(120px);
+        -ms-transform: translateX(120px);
+        -o-transform: translateX(120px);
+        transform: translateX(120px);
+    }
+}
+.loaderContainer {
+    width: 160px;
+    margin: 0 auto;
+    position: relative;
+}
+.loaderContainer .loaderBG {
+    background: #be2727;
+    width: 160px;
+    height: 35px;
+    border-radius: 2px;
+    float: left;
+}
+.loaderContainer .loaderCircle {
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    position: absolute;
+    top: -3px;
+    /* calling our animation keyframe */
+    -webkit-animation: loader 2300ms infinite ease-in-out;
+    -moz-animation: loader 2300ms infinite ease-in-out;
+    -ms-animation: loader 2300ms infinite ease-in-out;
+    -o-animation: loader 2300ms infinite ease-in-out;
+    animation: loader 2300ms infinite ease-in-out;
 }

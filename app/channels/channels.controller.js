@@ -1,10 +1,11 @@
 angular.module('inviraChatApp').
-    controller('ChannelsCtrl', function($state, Auth, Users, profile, channels) {
+    controller('ChannelsCtrl', function($scope, $state, Auth, Users, profile, channels) {
         var channelsCtrl = this;
 
         channelsCtrl.profile = profile;
         channelsCtrl.channels = channels;
         channelsCtrl.users = Users.all;
+        $scope.headerTitle = '';
         Users.setOnline(profile.$id);
 
         channelsCtrl.getDisplayName = Users.getDisplayName;
@@ -16,7 +17,7 @@ angular.module('inviraChatApp').
 
         channelsCtrl.createChannel = function() {
             channelsCtrl.channels.$add(channelsCtrl.newChannel).then(function(ref) {
-                $state.go('channels.messages', {channelId: ref.key()});
+                $state.transitionTo('channels.messages', {channelId: ref.key()});
             });
         };
 
@@ -24,7 +25,7 @@ angular.module('inviraChatApp').
             channelsCtrl.profile.online = null;
             channelsCtrl.profile.$save().then(function() {
                 Auth.$unauth();
-                $state.go('home');
+                $state.transitionTo('home');
             });
-        }
+        };
     });

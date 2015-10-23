@@ -22,7 +22,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.go('channels');
+                            $state.transitionTo('channels');
                         }, function(error) {
                             return;
                         });
@@ -36,7 +36,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.go('home');
+                            $state.transitionTo('home');
                         }, function(error) {
                             return;
                         });
@@ -50,7 +50,7 @@ angular
                 resolve: {
                     requireNoAuth: function($state, Auth) {
                         return Auth.$requireAuth().then(function(auth) {
-                            $state.go('home');
+                            $state.transitionTo('home');
                         }, function(error) {
                             return;
                         });
@@ -64,7 +64,7 @@ angular
                 resolve: {
                     auth: function($state, Users, Auth) {
                         return Auth.$requireAuth().catch(function() {
-                            $state.go('home');
+                            $state.transitionTo('home');
                         });
                     },
                     profile: function(Users, Auth) {
@@ -88,11 +88,11 @@ angular
                                 if (profile.displayName) {
                                     return profile;
                                 } else {
-                                    $state.go('profile');
+                                    $state.transitionTo('profile');
                                 }
                             });
                         }, function(error) {
-                            $state.go('home');
+                            $state.transitionTo('home');
                         });
                     }
                 }
@@ -133,4 +133,9 @@ angular
 
         $urlRouterProvider.otherwise('/');
     })
-    .constant('FirebaseUrl', 'https://invira-chat.firebaseio.com/');
+    .constant('FirebaseUrl', 'https://invira-chat.firebaseio.com/')
+    .run(function() {
+        console.log('sdfs');
+        //hide loader after page is finished loading
+        $('.loader_overlay').fadeOut(1000);
+    });

@@ -1,10 +1,10 @@
 angular.module('inviraChatApp')
-    .controller('MessagesCtrl', function(profile, channelName, messages) {
+    .controller('MessagesCtrl', function($scope, profile, channelName, messages) {
         var messagesCtrl = this;
 
+        $scope.$parent.headerTitle = channelName;
         messagesCtrl.messages = messages;
         messagesCtrl.channelName = channelName;
-
         messagesCtrl.message = '';
 
         messagesCtrl.sendMessage = function() {
