@@ -1,0 +1,33 @@
+<div class="row messages top-offset">
+    <div class="col-lg-12 message-box" ng-repeat="message in messagesCtrl.messages">
+        <img class="user-pic" ng-src="{{ channelsCtrl.getGravatar(message.uid) }}" />
+        <div class="message-info">
+            <div class="user-name">
+                {{ channelsCtrl.getDisplayName(message.uid) }}
+                <span class="timestamp">{{ message.timestamp | date:'short' }}</span>
+            </div>
+        </div>
+        <div class="message bubble left">
+            {{ message.body }}
+        </div>
+    </div>
+</div>
+
+
+<div class="row message-form">
+    <div class="col-lg-12">
+
+        <form ng-submit="messagesCtrl.sendMessage()">
+
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="messagesCtrl.message" placeholder="Type a message...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Send</button>
+                </span>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+

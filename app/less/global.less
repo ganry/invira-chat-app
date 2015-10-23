@@ -1,0 +1,165 @@
+@import 'var.less';
+
+body {
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.user-menu {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 10px;
+    float: right;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-inverse {
+    background-image: none;
+    background-color: @sidebar-header;
+    border-color: @sidebar-header;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 70px 0 20px;
+    border-bottom: 1px solid #eee;
+    color: @page-header-font;
+}
+
+.add-icon {
+    vertical-align: middle;
+}
+
+.message-form {
+    position:fixed;
+    bottom:0;
+    padding: 17px 15px 15px 0px;
+    width: 84.33%;
+    background:#fff;
+}
+
+.row.messages {
+    margin-bottom: 75px;
+}
+
+.row.top-offset {
+    margin-top: 75px;
+}
+
+
+.message-box {
+    padding: 15px;
+    padding-left: 20px;
+}
+
+.message {
+    color: @message-color;
+}
+
+
+.user-pic {
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.message-info {
+    display: inline-block;
+    vertical-align: top;
+    padding-left:10px;
+}
+
+.message-info .user-name {
+    color:#555459;
+    font-weight:900;
+}
+
+.message-info .user-name span{
+    color:#ccc;
+    font-weight: normal;
+    font-size:10px;
+}
+
+.fixed-header {
+    position: fixed;
+    float: right;
+    width: 83.33%;
+    z-index: 999;
+    background-color: #FFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.float-right {
+    float: right;
+}
+
+a.user-link {
+    text-decoration: none;
+    color: @user-menu-link;
+    outline: 0;
+}
+
+
+a.user-link:focus, a.user-link:hover, a.user-link:active {
+    text-decoration: none;
+    color: @user-menu-active-link;
+    outline: 0;
+}
+
+
+
+div.profile, div.home {
+    background: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666666;
+}
+
+div.create-channel {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666666;
+}
+
+.profile .form-base, .home .form-base {
+    margin-bottom: 30px;
+
+}
+
+
+
+
+.bubble.left {
+    margin-left: 50px;
+    background: @bubble-color;
+}
+.bubble {
+    position: relative;
+    padding: 15px;
+    margin: 0em 0 3em;
+    color: @baseFontColor;
+    background: @bubble-color;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}

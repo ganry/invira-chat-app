@@ -1,0 +1,103 @@
+@import 'var.less';
+
+.sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: @sidebar-color;
+    border-right: 1px solid #050716;
+}
+
+.sidebar .sidebar-caption {
+    color: @sidebar-header-font-color;
+    font-weight: bold;
+}
+
+.sidebar h2 {
+    color: @sidebar-header-font-color;
+    font-weight: bold;
+}
+
+.sidebar li > h2 {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.sidebar .sidebar-header {
+    background: @sidebar-header;
+    padding: 10px 0px 15px;
+    text-align: center;
+}
+
+
+.sidebar .sidebar-header .highlight {
+    color: @main-color;
+    font-weight: bold;
+}
+
+.sidebar .status {
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background: @status-offline;
+    vertical-align: middle;
+}
+
+.sidebar .status.online {
+    background: @status-online;
+}
+
+.nav > li > a {
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: @sidebar-color;
+    color: @sidebar-font-color;
+    border-left: 3px solid @sidebar-color;
+    otline: 0;
+}
+
+
+.nav>li.channel-item>a:focus, .nav>li.channel-item>a:hover, .nav>li.channel-item>a:active {
+    text-decoration: none;
+    background-color: @sidebar-second-color;
+    color: @sidebar-font-color-active;
+    border-left: 3px solid darken(@main-color, 20%);
+    otline: 0;
+}
+
+.nav>li.channel-item>a.selected {
+    text-decoration: none;
+    background-color: @sidebar-header;
+    color: @sidebar-font-color-active;
+    border-left: 3px solid @main-color;
+    otline: 0;
+}
+
+
+
+
+
+.nav>li>a:focus, .nav>li>a:hover, .nav>li>a:active {
+    text-decoration: none;
+    background-color: @sidebar-second-color;
+    color: @sidebar-font-color-active;
+    otline: 0;
+}
+
+.nav>li>a.selected {
+    text-decoration: none;
+    background-color: @sidebar-header;
+    color: @sidebar-font-color-active;
+    otline: 0;
+}
+
