@@ -367,6 +367,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= invira.dist %>'
+        }, {
+            expand: true,
+            cwd: 'bower_components/fontawesome',
+            src: 'fonts/*',
+            dest: '<%= invira.dist %>'
         }]
       },
       styles: {
