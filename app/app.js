@@ -12,7 +12,8 @@ angular
     .module('inviraChatApp', [
         'firebase',
         'angular-md5',
-        'ui.router'
+        'ui.router',
+        'ngAnimate'
     ])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -135,7 +136,6 @@ angular
     })
     .constant('FirebaseUrl', 'https://invira-chat.firebaseio.com/')
     .run(function() {
-        console.log('sdfs');
         //hide loader after page is finished loading
         $('.loader_overlay').fadeOut(1000);
     });
