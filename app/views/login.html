@@ -17,17 +17,27 @@
 
                 <!-- Form -->
                 <section>
-                    <form ng-submit="authCtrl.login()" id="login-form" >
+                    <form ng-submit="authCtrl.login()" name="loginForm" role="form">
 
                         <div class="clearfix"></div>
 
-                        <div class="input-group login-username"><div class="input-group-addon">Email</div><input ng-model="authCtrl.user.email" type="text" placeholder="Email" name="email" id="login-username"><span aria-hidden="true" id="status-username" class="status-icon"></span></div>
-                        <div class="input-group login-password"><div class="input-group-addon">Password</div><input ng-model="authCtrl.user.password" type="password" placeholder="Password" name="password" id="login-password"><span aria-hidden="true" id="status-password" class="status-icon"></span></div>
+                        <div class="input-group login-username">
+                            <div class="input-group-addon">Email</div>
+                            <input ng-model="authCtrl.user.email" ng-class="{ 'error-input' : loginForm.email.$invalid }" type="email" placeholder="Email" name="email" >
+                            <span ng-class="{ 'icon-close' : loginForm.email.$invalid }" aria-hidden="true" class="status-icon"></span>
+                        </div>
+                        <div class="input-group login-password">
+                            <div class="input-group-addon">Password</div>
+                            <input ng-model="authCtrl.user.password" type="password" placeholder="Password" name="password" required="">
+                            <span aria-hidden="true" class="status-icon"></span>
+                        </div>
 
                         <div class="row section-action">
                             <!-- Submit -->
-                            <div class="col-xs-4">
-                                <button class="btn primary pull-right custom-color-back">Login</button>
+                            <div class="col-xs-4 pull-right">
+                                <button ladda-loading="authCtrl.loading" data-style="expand-right" ng-disabled="!authCtrl.user.email || !authCtrl.user.password" type="submit" class="btn primary pull-right ladda-button second-color">
+                                    <span class="ladda-label">Login</span>
+                                </button>
                             </div>
                         </div>
                     </form>

@@ -17,10 +17,18 @@
                 </header>
 
                 <section>
-                    <form ng-submit="authCtrl.register()" id="signup-form">
+                    <form ng-submit="authCtrl.register()" name="regForm" role="form">
 
-                        <div class="input-group signup-email"><div class="input-group-addon">Email</div><input ng-model="authCtrl.user.email" type="text" placeholder="Email" name="email" id="signup-email"><span aria-hidden="true" id="status-email" class="status-icon"></span></div>
-                        <div class="input-group signup-password"><div class="input-group-addon">Password</div><input ng-model="authCtrl.user.password" type="password" placeholder="Password" name="password" id="signup-password"><span aria-hidden="true" id="status-signup-password" class="status-icon"></span></div>
+                        <div class="input-group signup-email">
+                            <div class="input-group-addon">Email</div>
+                            <input ng-model="authCtrl.user.email" ng-class="{ 'error-input' : regForm.email.$invalid } " type="email" placeholder="Email" name="email">
+                            <span ng-class=" { 'icon-close' : regForm.email.$invalid } " aria-hidden="true" class="status-icon"></span>
+                        </div>
+                        <div class="input-group signup-password">
+                            <div class="input-group-addon">Password</div>
+                            <input ng-model="authCtrl.user.password" type="password" placeholder="Password" name="password" required="">
+                            <span aria-hidden="true" class="status-icon"></span>
+                        </div>
 
                         <!-- Checkbox area -->
                         <div class="input-group">
@@ -28,14 +36,16 @@
                                 <input type="checkbox" name="signup-agree" id="signup-agree" class="toggle toggle-round">
                                 <label for="signup-agree"></label>
                             </div>
-                            <label for="signup-agree">Agree with <a href="" data-toggle="modal" data-target="#terms_and_conditions_modal" class="custom-color">terms &amp; conditions</a></label><span aria-hidden="true" id="status-agree" class="status-icon"></span>
+                            <label for="signup-agree">Agree with <a href="" data-toggle="modal" data-target="#terms_and_conditions_modal" class="custom-color">terms &amp; conditions</a></label><span aria-hidden="true" class="status-icon"></span>
                         </div>
                         <div class="clearfix"></div>
 
                         <div class="row section-action">
                             <!-- Submit -->
                             <div class="col-xs-4 pull-right">
-                                <button class="btn primary pull-right custom-color-back">Sign up</button>
+                                <button ladda-loading="authCtrl.loading" data-style="expand-right" ng-disabled="!authCtrl.user.email || !authCtrl.user.password" class="btn primary pull-right ladda-button custom-color-back">
+                                    <span class="ladda-label">Sign up</span>
+                                </button>
                             </div>
                         </div>
                     </form>
