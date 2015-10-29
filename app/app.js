@@ -13,7 +13,8 @@ angular
         'firebase',
         'angular-md5',
         'ui.router',
-        'ngAnimate'
+        'ngAnimate',
+        'ngSanitize'
     ])
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider

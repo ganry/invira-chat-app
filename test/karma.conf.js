@@ -29,6 +29,8 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/spin.js/spin.js',
       'bower_components/ladda/dist/ladda.min.js',
+      'bower_components/urijs/src/URI.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

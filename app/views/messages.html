@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="message bubble left">
-            {{ message.body }}
+            <div ng-bind-html="messagesCtrl.trustAsHtml(message.body)"></div>
         </div>
     </div>
 </div>
