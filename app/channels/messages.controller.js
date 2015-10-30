@@ -11,6 +11,16 @@ angular.module('inviraChatApp')
             return $sce.trustAsHtml(message);
         };
 
+        //needs to be refactored and moved
+        //TODO: is used in service, remove it from controller
+        messagesCtrl.scrollToBottom = function() {
+            if ($('#footer-bottom').length > 0) {
+                $('html, body').animate({
+                    scrollTop: $('#footer-bottom').last().offset().top
+                }, 'slow');
+            }
+        };
+
 
         //needs to be refactored and moved to separate factory
         messagesCtrl.parseUrl = function (url) {

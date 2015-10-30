@@ -135,6 +135,17 @@ angular
 
         $urlRouterProvider.otherwise('/');
     })
+    .directive('afterRender', ['$timeout', function ($timeout) {
+        var def = {
+            restrict: 'A',
+            terminal: true,
+            transclude: false,
+            link: function (scope, element, attrs) {
+                $timeout(scope.$eval(attrs.afterRender), 500);  //Calling a scoped method
+            }
+        };
+        return def;
+    }])
     .constant('FirebaseUrl', 'https://invira-chat.firebaseio.com/')
     .run(function() {
         //hide loader after page is finished loading
