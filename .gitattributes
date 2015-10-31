@@ -1,2 +1,2 @@
 * text=auto
-app/styles/* linguist-vendored
+notification.less linguist-vendored=true
