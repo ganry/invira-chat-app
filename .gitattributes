@@ -1,3 +1,4 @@
 * text=auto
 app/styles/* linguist-vendored
-app/less/* linguist-vendored
+notification.less linguist-vendored=true
+login.less linguist-vendored=true
