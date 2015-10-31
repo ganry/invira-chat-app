@@ -1,4 +1,5 @@
 * text=auto
+app/less/* linguist-vendored
 ladda-themeless.min.css linguist-vendored=true
 font-awesome.min.css linguist-vendored=true
 bootstrap.min.css linguist-vendored=true
