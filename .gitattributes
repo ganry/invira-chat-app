@@ -1,3 +1,5 @@
 * text=auto
-app/styles/* linguist-vendored
-app/less/* linguist-vendored
+ladda-themeless.min.css linguist-vendored=true
+font-awesome.min.css linguist-vendored=true
+bootstrap.min.css linguist-vendored=true
+bootstrap-theme.min.css linguist-vendored=true
