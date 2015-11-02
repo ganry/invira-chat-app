@@ -141,7 +141,7 @@ angular
             terminal: true,
             transclude: false,
             link: function (scope, element, attrs) {
-                $timeout(scope.$eval(attrs.afterRender), 500);  //Calling a scoped method
+                $timeout(scope.$eval(attrs.afterRender), 700);  //Calling a scoped method
             }
         };
         return def;
