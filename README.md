@@ -3,7 +3,7 @@
 InVira Chat
 =====================
 
-Simple Chat App written with AngularJS using Firebase by [Henry Keller](http://www.henrykeller.eu).
+Simple Chat App written with AngularJS using Firebase.
 
 **Development Time:** 12 hours
 
