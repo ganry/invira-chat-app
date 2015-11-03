@@ -25,6 +25,8 @@ Running `grunt test` will run the unit tests with karma.
 
 ## License
 
+    The MIT License (MIT)
+
     Copyright (c) 2015 Henry Keller <henry@inapp.eu>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
