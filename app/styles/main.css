@@ -1747,6 +1747,47 @@ footer.main-footer a.social > i {
 }
 .main-footer .fa.fa-heart {
   color: #c73935;
+  -webkit-animation: heartBeat 1.5s infinite ease-in-out;
+  animation: heartBeat 1.5s infinite ease-in-out;
+}
+/* Animations */
+@-webkit-keyframes heartBeat {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  35% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+@keyframes heartBeat {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  35% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
 }
 
 .sidebar {
