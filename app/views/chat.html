@@ -18,10 +18,10 @@
         <li class="sidebar-caption">
             <h2>User</h2>
         </li>
-        <li ng-repeat="user in channelsCtrl.users">
+        <li ng-repeat="user in channelsCtrl.users | orderBy : user.online">
             <a ng-if="user.$id !== channelsCtrl.profile.$id" ui-sref="channels.direct({uid: user.$id})">
-                <span class="status" ng-class="{online: user.online}"></span>
-                {{ user.displayName }}</a>
+                <img class="user-pic-status img-rounded" ng-src="{{ channelsCtrl.getGravatar(user.$id) }}" /> {{ user.displayName }} <span class="status" ng-class="{online: user.online}"></span>
+            </a>
         </li>
     </ul>
 </div>

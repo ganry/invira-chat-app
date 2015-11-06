@@ -1958,6 +1958,13 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
+.user-pic-status {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
 .message-info {
   display: inline-block;
   vertical-align: top;
